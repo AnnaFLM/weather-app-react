@@ -5,15 +5,13 @@ import Details from "./Details";
 
 function App() {
   return (
-    <header className="App-header">
-      <div className="App">
-        <div className="container">
-          <Search />
-          <Weather />
-          <Details />
-        </div>
+    <div className="App">
+      <div className="container">
+        <Search />
+        <Weather defaultCity="Berlin" />
+        <Details />
       </div>
-    </header>
+    </div>
   );
 }
 
