@@ -50,10 +50,12 @@ weather-info {
   border: 0;
 }
 
-#search-button,
-#location-button {
+.locationButton,
+.searchButton,
+.currentButton {
   border: 0;
-  background-color: lightgrey;
+  border-radius: 10px;
+  background-color: whitesmoke;
 }
 
 .tempMin,
