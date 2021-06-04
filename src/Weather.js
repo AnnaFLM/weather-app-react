@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CurrentDate from "./CurrentDate";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -8,7 +9,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       city: response.data.name,
-      date: "Friday, 4 June, 16:00",
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
       description: response.data.weather[0].description,
@@ -28,7 +29,7 @@ export default function Weather(props) {
           <strong>{weatherData.city}</strong>
         </h1>
         <p>
-          {weatherData.date}
+          <CurrentDate date={weatherData.date} />
           <br />
           {weatherData.time}
         </p>
