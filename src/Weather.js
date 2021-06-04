@@ -60,8 +60,8 @@ export default function Weather(props) {
                   <i className="fas fa-temperature-high"></i>
                 </div>
                 <span>{weatherData.tempMax}</span>°{" "}
-                <span>{weatherData.tempMin}</span>
-                <span>°</span>
+                <span className="tempMin">{weatherData.tempMin}</span>
+                <span className="degreeSymbol">°</span>
               </div>
               <div className="col-sm-2">
                 <div>

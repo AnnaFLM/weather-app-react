@@ -56,7 +56,7 @@ weather-info {
   background-color: lightgrey;
 }
 
-#degree-min,
-#degree-symbol {
+.tempMin,
+.degreeSymbol {
   opacity: 0.6;
 }
