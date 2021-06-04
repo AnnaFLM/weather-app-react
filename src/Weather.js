@@ -7,13 +7,15 @@ export default function Weather(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      city: response.data.name,
       date: "Friday, 4 June, 16:00",
       temperature: Math.round(response.data.main.temp),
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
       iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
-      wind: response.data.wind.speed,
-      city: response.data.name,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      tempMax: Math.round(response.data.main.temp_max),
+      tempMin: Math.round(response.data.main.temp_min),
+      wind: Math.round(response.data.wind.speed),
     });
   }
 
@@ -44,6 +46,33 @@ export default function Weather(props) {
         </h2>
         <p>{weatherData.description}</p>
         <br />
+        <div>
+          <div className="weather-info">
+            <div className="row justify-content-center">
+              <div className="col-sm-2">
+                <div>
+                  <i className="fas fa-tint"></i>
+                </div>
+                <span>{weatherData.humidity}</span> %
+              </div>
+              <div className="col-sm-2">
+                <div>
+                  <i className="fas fa-temperature-high"></i>
+                </div>
+                <span>{weatherData.tempMax}</span>°{" "}
+                <span>{weatherData.tempMin}</span>
+                <span>°</span>
+              </div>
+              <div className="col-sm-2">
+                <div>
+                  <i className="fas fa-wind"></i>
+                </div>
+                <span>{weatherData.wind}</span> km/h
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
       </div>
     );
   } else {
