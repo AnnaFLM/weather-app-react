@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+
 import axios from "axios";
 
 export default function Weather(props) {
@@ -13,7 +14,7 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
-      iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       tempMax: Math.round(response.data.main.temp_max),
@@ -23,7 +24,7 @@ export default function Weather(props) {
   }
 
   function handleSubmit(event) {
-    event.preventDeafult();
+    event.preventDefault();
     search();
   }
 
