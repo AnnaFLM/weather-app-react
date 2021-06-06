@@ -1,0 +1,59 @@
+import React from "react";
+import CurrentDate from "./CurrentDate";
+
+export default function WeatherInfo(props) {
+  return (
+    <div className="WeatherInfo">
+      <br />
+      <br />
+      <h1>
+        <strong>{props.data.city}</strong>
+      </h1>
+      <p>
+        <CurrentDate date={props.data.date} />
+        <br />
+        {props.data.time}
+      </p>
+      <br />
+      <h2>
+        <span>{props.data.temperature}</span>
+        <span className="degrees"> °C </span>
+        <div>
+          <img
+            alt={props.data.description}
+            src={props.data.iconUrl}
+            width="120"
+          />
+        </div>
+      </h2>
+      <p>{props.data.description}</p>
+      <br />
+
+      <div className="weather-info">
+        <div className="row justify-content-center">
+          <div className="col-sm-2">
+            <div>
+              <i className="fas fa-tint"></i>
+            </div>
+            <span>{props.data.humidity}</span> %
+          </div>
+          <div className="col-sm-2">
+            <div>
+              <i className="fas fa-temperature-high"></i>
+            </div>
+            <span>{props.data.tempMax}</span>°{" "}
+            <span className="tempMin">{props.data.tempMin}</span>
+            <span className="degreeSymbol">°</span>
+          </div>
+          <div className="col-sm-2">
+            <div>
+              <i className="fas fa-wind"></i>
+            </div>
+            <span>{props.data.wind}</span> km/h
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+  );
+}
