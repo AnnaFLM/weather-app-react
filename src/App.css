@@ -32,14 +32,6 @@ weather-info {
   font-size: 30px;
 }
 
-.weather-forecast {
-  text-align: center;
-}
-
-.forecast-temp-min {
-  opacity: 0.6;
-}
-
 .developer {
   display: block;
   text-align: center;
